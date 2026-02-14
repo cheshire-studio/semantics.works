@@ -1,0 +1,8 @@
+
+{
+  "name": "DATA.BUILD",
+  "description": "Strategic data platforms for modern eCommerce and B2C enterprises.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

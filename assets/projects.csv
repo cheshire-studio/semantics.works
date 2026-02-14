@@ -1,0 +1,171 @@
+Time period;Project description;Client
+12.2024 - today;"CRM (customer analysis, ai powered CRM app, …),  shop, erp migration gemini 2.5, ";Blume2000
+02.2025 - 12.2025;"Architecture and Conception of a Data Mesh Solution. 
+Conception of the Data Mesh architecture, definition of data products, development of the Data Catalog, support in the recruiting process. 
+Consultant, Data Engineer, ecommerce.
+Tools & Technologies: GCP, BigQuery, Dataplex, Jira, Confluence";Brack Alltron 
+04.2024 - today;"Technical Conception, Architecture, and Development of a DWH Solution. 
+Conception of the multi-layer data architecture, data modeling, creation of loading processes, test and monitoring scripts, data validation and quality assurance, data preparation for customer analyses. 
+Conception and Implementation of CRM focused data and analysis models.
+Conception and Implementation of CLC and RFM models, integration of loyalty data
+Data Architect / Engineer, ecommerce.
+Tools & Technologies: MS SQL Server (MSSQL DB, SSIS), biGENIUS, IBM Cognos FWM/Analytics, Jira, Confluence";Calida
+11.2023 - 04.2024;"Architecture and Conception of a Data Mesh Solution. 
+Conception of the multi-layer data architecture, data modeling (Business Model), development of the infrastructure. Support in the recruiting process. 
+Data Architect / Engineer, ecommerce.
+Tools & Technologies: Snowflake, Prefect, Pulumi, dbt, aws, notion, Gitlab";Intersport 
+11.2020 - 10.2023;"Technical Conception, Architecture, and Development of a CRM DWH Solution. 
+Conception of the multi-layer data architecture, data modeling, creation of loading processes, test and monitoring scripts, data validation and quality assurance, development of customer analyses (like RFM, CLV cluster, top customer clustering, second order analysis, coupon affinity). Conception and implementation of product scoring for (onsite) product feed sorting, campaign reporting. Support in the recruiting process. 
+Data Architect / Engineer, ecommerce.
+Tools & Technologies: BigQuery, Cloud Composer, Terraform, dbt, Google Colab, Looker Studio, Jira, Confluence, Gitlab";Blume2000
+07.2020 - 10.2020;"Development of Algorithmic Trading Bots (on- & off-chain). 
+Identification and consolidation of relevant data sources. Feature engineering, training of machine learning models. Backtesting, analysis of on-chain trading patterns (copy trading), deployment & monitoring of the solution (GCP), alerting (telegram channel). 
+Tools & Technologies: OKR (Weekdone), Python, Google Cloud Platform, Infura, Etherscan, Telegram";lisr&D
+11.2017 - 06.2020;"Management of a DWH & Reporting Team. @Marc O`POLO 
+Technical and disciplinary leadership of the DWH team. Iterative development of the DWH solution (architecture, scope, data quality). Development of a structured, requirements- and outcome-based prioritization process. 
+Staff development and leadership 
+Agile Coaching
+Requirements management & interface to business departments 
+Conception and implementation (ETL processes and reports). 
+Tools & Technologies: MS SQL Server (MSSQL DB, SSIS, SSAS, SSRS), BigQuery, MS Power BI, C#, Redgate SQL Prompt & Compare, Git (Bitbucket), Jira, Confluence";Marc O`POLO 
+02.2014 - 10.2017;"Development and Management of a DWH/BI/Analytics Department. @STYLEBOP
+Conception and development of the DWH, Reporting, and Analytics solution for an eCommerce company. Technical responsibility for the topic and disciplinary leadership of the team. 
+Architecture and conception of the DWH, BI, and Analytics solution 
+Implementation of ETL templates, processes, and reports 
+Requirements management 
+Staff development and leadership. 
+Tools & Technologies: SQL Power Architect, MS SQL Server (MSSQL DB, SSIS, SSRS), BixPress, R, SVN";STYLEBOP
+09.2013 - 01.2014;"Development of a Customer-Centric DWH Solution. 
+Conception and development of a customer-centric DWH solution for a specialized media company. 
+Media company, Consultant, Project Management. 
+Project management 
+Data modeling 
+Implementation of ETL processes. 
+Tools & Technologies: SQL Power Architect, MS SQL Server (MSSQL DB, SSIS, SSAS, SSRS), BIxPress";Vogel Business Media
+12.2012 - 08.2013;"DWH/BI for eCommerce Shops. 
+Conception and development of a multi-tenant standard DWH/BI solution for eCommerce shops. 
+e-Commerce, Consultant, Project Management. 
+Project management 
+Conception 
+Data modeling 
+‚Implementation of ETL processes. 
+Tools & Technologies: SQL Power Architect, MS SQL Server (MSSQL DB, SSIS, SSAS, SSRS), BIxPress, PowerPivot, Google Adwords (Data source), Affilinet (Data source), Zanox (Data source)";SHS Viveon
+07.2012 - 11.2012;"Conception and Development of a DWH/BI Solution. 
+Conception and development of a DWH/BI solution for an online marketplace.
+e-Commerce, Consultant, Project Management. 
+Project management
+Requirements analysis
+Data modeling
+Implementation of ETL processes. 
+Tools & Technologies: MySQL Workbench, MySQL, Pentaho Data Integration, Google Analytics (Data source), Palo (Data source, Data sink)";DaWanda
+03.2012 - 06.2012;"Conception of a Group DWH/BI Solution. 
+Conception of a multi-tenant DWH/BI solution for a corporate group with different e-commerce business models. 
+e-Commerce, Consultant, Project Management. 
+Project management 
+Requirements analysis 
+Functional and technical conception 
+Data modeling
+Architecture
+Report Design.
+Tools & Technologies: Sybase Power Designer, MySQL, MS SQL Server (MSSQL DB, SSRS), PowerPivot";shirtinator
+12.2011 - 02.2012;"Conception and Development of a Web Tracking DWH Solution.
+Development of a web tracking DWH solution to support the campaign management of an online retail company. 
+e-Commerce, Consultant. 
+Technical conception 
+Implementation of ETL processes. 
+Tools & Technologies: MS SQL Server (MSSQL DB), Pentaho Data Integration, Webtrekk (Data source)";Zalando
+08.2011 - 11.2011;"Development of a DWH/BI Solution. 
+Development of a DWH/BI solution for an online retail company. Migration and adaptation of a multi-tenant solution to specific requirements. 
+e-Commerce, Consultant. 
+Conception and implementation of ETL processes 
+Measures to improve data quality (Data Cleansing). 
+Tools & Technologies: Oracle SQL Developer Data Modeler, Oracle DB, Pentaho Data Integration, Webtrekk (Data source)";Rocket Internet
+04.2011 - 07.2011;"Customer Datamart Design and Development. 
+Development of a customer datamart for central information provision for the closed-loop campaign management of an online retail company. Mapping the interface between the campaign tool and the email tool, as well as feeding back response data into the customer datamart. 
+e-Commerce, Consultant. 
+Conception and design of the customer datamart 
+Conception and implementation of ETL processes 
+Measures to improve data quality (Data Cleansing). 
+Tools & Technologies: Sybase Power Designer, MS SQL Server (MSSQL DB, SSIS), Unica (Data source, Data sink), CheetahMail (Data source, Data sink)";Zalando
+08.2010 - 03.2011;"DWH Architecture and Data Modeling. 
+Analysis of the DWH solution (architecture, data model, ETL processes) of an insurance company with regard to flexibility, maintainability, performance, and (data) quality. 
+Financial services industry, Consultant. 
+BI strategy and management consulting 
+Conception and comparison of BI solution scenarios
+Project conception
+ETL process analysis. 
+Tools & Technologies: Oracle SQL Developer Data Modeler, Oracle DB, Informatica";sparkasse 
+07.2010 - 07.2010;"Consolidation of Video Rental Reporting Part 2. 
+Consolidation of the reporting solution of an online media company with regard to maintainability and expandability. 
+Media company, Consultant. 
+Design and implementation of ETL processes 
+ETL process automation 
+Component, migration, and system tests 
+Project handover and documentation. 
+Tools & Technologies: MySQL Workbench, MySQL, Pentaho Data Integration";Nunet media
+06.2010 - 06.2010;"DWH Project Coordination and ETL Process Monitoring. 
+Design and development of ETL process monitoring for an online retail company. 
+e-Commerce, Consultant. 
+Project coordination
+ETL process analysis
+Conception of ETL process monitoring
+Implementation of ETL processes. 
+Tools & Technologies: Oracle SQL Developer Data Modeler, Oracle DB, Oracle Warehouse Builder";Buch de
+03.2010 - 05.2010;"DWH Design and Development. 
+Design and development of the DWH solution for an online service company. 
+e-Commerce, Consultant. 
+Conception of the DWH solution 
+Design of ETL workflows (for dimensions and facts) 
+Data analysis and data reconciliation (DWH) 
+Development of aggregate tables for reporting
+Documentation and handover. 
+Tools & Technologies: MySQL Workbench, MySQL, Pentaho Data Integration, Inxmail (Data source), Google Adwords (Data source), Affilinet (Data source), Zanox (Data source)";Pixum
+12.2009 - 12.2009;"DWH Feasibility Study / Data Analysis. 
+Analysis of the operational data inventory of an online service company in preparation for a DWH solution. 
+e-Commerce, Consultant. 
+Data analysis of the operational source system 
+Adaptation of the DWH target data model
+Recommendation for data cleansing
+High-level project planning for the implementation of the DWH solution. 
+Tools & Technologies: MySQL Workbench, MySQL, Pentaho";Pixum
+11.2009 - 11.2009;"Consolidation of Video Rental Reporting Part 1. 
+Consolidation of the reporting solution of an online media company with regard to maintainability and expandability. Media company, Consultant. - Design and implementation of ETL processes
+Media company, Consultant.
+Component, migration, and system tests
+Project completion. 
+Tools & Technologies: MySQL Workbench, MySQL, Pentaho Data Integration";Nunet media
+08.2008 - 12.2008;"DWH based CRM focused BI Solution. 
+Conception of a DWH-based BI solution for a building society. (Hungary). 
+Financial services industry, Project Manager. 
+Project management 
+Requirements analysis using the IIW requirements model and mind maps - Functional concept / Specifications 
+Design ETL (based on the IIW Business and Enterprise Model) and OLAP Cubes 
+Installation of a test system. 
+Tools & Technologies: ERwin, IBM Insurance Information Warehouse, DB2, IBM Infosphere Warehouse Edition";Wüstenrot Salzburg
+04.2008 - 10.2009;"All-lines Data Warehouse / BI Solution Expansion Stage 1 + 2. 
+Expansion of the all-lines DWH / BI solution of a financial service provider in terms of scope, depth, and comfort of analysis options. (Austria). 
+Financial services industry, Project Manager. 
+Project management 
+Requirements analysis using the IIW requirements model
+Data analysis - Functional concept / Specifications
+Design ETL (based on the IIW Business and Enterprise Model) and OLAP Cubes 
+Test support
+Ad-hoc report design. 
+Tools & Technologies: ERwin, IBM Insurance Information Warehouse, DB2, DB2 Warehouse Manager, MS SQL Server (SSAS, SSRS), Infor PM10 Office Plus";Wüstenrot Salzburg
+02.2007 - 03.2008;"All-lines Data Warehouse / BI Solution. 
+Development of the BI solution for personal insurance as part of the overall all-lines BI project of a financial service provider. (Austria). Financial services industry, 
+Developer / Work package responsible. 
+Requirements analysis using the IIW requirements model
+Data analysis
+ Design and development of ETL processes based on the IIW Business and Enterprise Model 
+Test support 
+Ad-hoc report design 
+User training. 
+Tools & Technologies: ERwin, IBM Insurance Information Warehouse, DB2, DB2 Warehouse Manager, MS SQL Server (SSAS, SSRS), Infor PM10 Office Plus";Wüstenrot Salzburg
+01.2006 - 02.2007;"P&C New. 
+New development of property and casualty insurance software for a financial service provider. (Austria). 
+Financial services industry, Developer / Work package responsible. 
+Requirements clarification
+Software development 
+Software tests.
+Tools & Technologies: DB2, PL/1";Wüstenrot Salzburg
