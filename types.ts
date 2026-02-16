@@ -1,5 +1,5 @@
 
-export interface Project {
+export interface Work {
   id: string;
   title: string;
   category: string;
@@ -18,5 +18,7 @@ export enum Page {
   Home = 'home',
   Work = 'work',
   Services = 'services',
-  About = 'about'
+  About = 'about',
+  Imprint = 'imprint',
+  Privacy = 'privacy'
 }

@@ -1,7 +1,7 @@
 
-import { Project, Service } from './types';
+import { Work, Service } from './types';
 
-export const PROJECTS: Project[] = [
+export const WORKS: Work[] = [
   {
     id: '01',
     title: 'Luxury BI Architecture',
@@ -60,21 +60,21 @@ export const SERVICES: Service[] = [
   {
     title: 'Foundational Advisory',
     description: 'We clarify the "Why". Before engineering begins, we bridge the gap between business pain and technical architecture through rigorous requirements engineering and strategic alignment.',
-    details: ['Requirements Engineering', 'Business Case & ROI Discovery', 'Hiring & Team Advisory', 'Technical Specifications']
+    details: ['Requirements Engineering', 'Business Case discovery', 'Hiring & Team Advisory', 'Technical Specifications']
   },
   {
-    title: 'Data Platform Strategy',
-    description: 'We design the blueprints. From platform-level strategy to modern cloud-native environments that solve technical debt and structural bottlenecks.',
-    details: ['Strategy', 'Data Architecture', 'Architecture Audits']
+    title: 'Semantic Architecture',
+    description: 'We make data make sense. We design machine-readable, centralized semantic layers that serve as the single source of truth for both humans and AI agents.',
+    details: ['Semantic Modeling', 'Metric Definition Strategy', 'Knowledge Graph Basics', 'AI-Ready Data Contracts']
   },
   {
     title: 'Data Engineering',
-    description: 'We build the engines. Robust, automated data platforms that turn raw operational noise into high-fidelity data products for every business vertical.',
-    details: ['Data Modeling', 'Automated Pipelines', 'Cloud Native Engineering']
+    description: 'We build the engines. Robust, automated data platforms (GCP/BigQuery) that turn raw operational noise into high-fidelity data products.',
+    details: ['BigQuery/GCP Specialization', 'Automated Pipelines', 'Data Modeling', 'Cloud Native Systems']
   },
   {
-    title: 'Consumer Intelligence',
-    description: 'We drive the action. Implementing strategic modeling and AI-powered systems that generate measurable business value through deep customer insights.',
-    details: ['Lifecycle Intelligence', 'Strategic AI Integration', 'Closed-Loop Analytics']
+    title: 'Agentic Intelligence',
+    description: 'We drive the action. Implementing AI-powered systems and closed-loop analytics that leverage your semantic layer to generate measurable business value.',
+    details: ['LLM Integration', 'Customer Intelligence', 'Predictive Modeling', 'Closed-Loop Feedback']
   }
 ];
