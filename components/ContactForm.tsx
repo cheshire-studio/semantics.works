@@ -7,13 +7,31 @@ export const ContactForm: React.FC = () => {
         email: '',
         message: ''
     });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Future: Integrate with backend or email service
-        alert('Thank you for reaching out. We will be in touch soon.');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus('loading');
+
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) throw new Error('Failed to send message');
+
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setStatus('idle'), 5000);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
     };
 
     return (
@@ -29,6 +47,7 @@ export const ContactForm: React.FC = () => {
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors font-light text-sm"
                             placeholder="Your full name"
+                            disabled={status === 'loading'}
                         />
                     </div>
                     <div className="space-y-2 group">
@@ -40,6 +59,7 @@ export const ContactForm: React.FC = () => {
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors font-light text-sm"
                             placeholder="hello@company.com"
+                            disabled={status === 'loading'}
                         />
                     </div>
                 </div>
@@ -53,16 +73,27 @@ export const ContactForm: React.FC = () => {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors font-light text-sm resize-none"
                         placeholder="Tell us about your architectural challenge..."
+                        disabled={status === 'loading'}
                     />
                 </div>
 
-                <button
-                    type="submit"
-                    className="group relative inline-flex items-center gap-4 text-[10px] tracking-[0.5em] uppercase font-medium pt-4"
-                >
-                    <span>Submit Request</span>
-                    <div className="w-8 h-[1px] bg-black/20 group-hover:w-12 group-hover:bg-black transition-all duration-500"></div>
-                </button>
+                <div className="flex items-center gap-6">
+                    <button
+                        type="submit"
+                        disabled={status === 'loading'}
+                        className="group relative inline-flex items-center gap-4 text-[10px] tracking-[0.5em] uppercase font-medium pt-4 disabled:opacity-50"
+                    >
+                        <span>{status === 'loading' ? 'Sending...' : 'Submit Request'}</span>
+                        <div className="w-8 h-[1px] bg-black/20 group-hover:w-12 group-hover:bg-black transition-all duration-500"></div>
+                    </button>
+
+                    {status === 'success' && (
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-green-600 animate-in fade-in pt-4">Message Sent Successfully</span>
+                    )}
+                    {status === 'error' && (
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-red-600 animate-in fade-in pt-4">Error Sending Message</span>
+                    )}
+                </div>
             </form>
         </div>
     );
