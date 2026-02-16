@@ -97,9 +97,9 @@ export const SERVICES: Service[] = [
   {
     title: 'Data Engineering     ',
     description:
-      'We build the engines. Robust, automated data platforms (GCP/BigQuery) that turn raw operational noise into high-fidelity data products.',
+      'We build the engines. Robust, automated data platforms that turn raw operational noise into high-fidelity data products.',
     details: [
-      'BigQuery/GCP Specialization',
+      'State of the Art Processes',
       'Automated Pipelines',
       'Data Modeling',
       'Cloud Native Systems',

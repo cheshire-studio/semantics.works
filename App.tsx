@@ -132,9 +132,9 @@ const App = () => {
                       data platforms for agile SMEs and high-growth B2C enterprises.
                     </p>
                     <p className="text-sm font-light opacity-50 leading-relaxed">
-                      We specialize in BigQuery-centric architectures on GCP. By integrating modern
-                      engineering workflows with strategic customer modeling, we help companies
-                      transform technical friction into measurable competitive advantage.
+                      By integrating modern engineering workflows with strategic customer modeling,
+                      we help companies transform technical friction into measurable competitive
+                      advantage.
                     </p>
                   </div>
                 </div>
@@ -162,8 +162,8 @@ const App = () => {
                         Focus
                       </h4>
                       <p className="text-sm font-light opacity-50">
-                        We don't just maintain; we build. Our goal is to create foundations that
-                        empower your internal teams to scale without friction.
+                        Our goal is to create foundations that empower your internal teams to scale
+                        without friction.
                       </p>
                     </div>
                     <div>
@@ -171,8 +171,8 @@ const App = () => {
                         Value
                       </h4>
                       <p className="text-sm font-light opacity-50">
-                        Solving real pain-points in customer analytics, attribution, and reporting
-                        is our primary metric for success.
+                        Solving real pain-points in customer analytics, insights, and reporting is
+                        our primary metric for success.
                       </p>
                     </div>
                   </div>

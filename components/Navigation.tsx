@@ -1,4 +1,3 @@
-import React from 'react';
 import { Page } from '../types';
 
 interface NavigationProps {
@@ -6,7 +5,7 @@ interface NavigationProps {
   setCurrentPage: (page: Page) => void;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentPage }) => {
+export const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => {
   const navItems = [
     { name: 'WORKS', value: Page.Work },
     { name: 'SOLUTIONS', value: Page.Services },
@@ -17,11 +16,11 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentP
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 px-6 py-8 md:px-12 flex justify-between items-center transition-colors duration-500 ${isDark ? 'text-white' : 'text-black bg-white/80 backdrop-blur-md border-b border-black/5'}`}
+      className={`fixed top-0 left-0 w-full z-50 px-4 py-6 md:px-12 md:py-8 flex justify-between items-center transition-colors duration-500 ${isDark ? 'text-white' : 'text-black bg-white/80 backdrop-blur-md border-b border-black/5'}`}
       aria-label="Main navigation"
     >
       <div
-        className="cursor-pointer font-medium tracking-tighter text-xl transition-opacity hover:opacity-60"
+        className="cursor-pointer font-medium tracking-tighter text-base md:text-xl transition-opacity hover:opacity-60"
         onClick={() => setCurrentPage(Page.Home)}
         role="button"
         tabIndex={0}
@@ -30,12 +29,12 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentP
       >
         SEMANTICS.WORKS
       </div>
-      <div className="flex gap-8 text-[10px] md:text-xs tracking-[0.2em] font-light">
+      <div className="flex gap-3 md:gap-8 text-[9px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] font-light">
         {navItems.map((item) => (
           <button
             key={item.value}
             onClick={() => setCurrentPage(item.value)}
-            className={`transition-all uppercase relative group py-2 ${
+            className={`transition-all uppercase relative group py-2 whitespace-nowrap ${
               currentPage === item.value ? 'opacity-100' : 'opacity-40 hover:opacity-100'
             }`}
             aria-label={`Navigate to ${item.name}`}
