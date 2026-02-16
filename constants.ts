@@ -68,12 +68,12 @@ export const SERVICES: Service[] = [
     details: ['Semantic Modeling', 'Metric Definition Strategy', 'Knowledge Graph Basics', 'AI-Ready Data Contracts']
   },
   {
-    title: 'Data Engineering',
+    title: 'Data Engineering     ',
     description: 'We build the engines. Robust, automated data platforms (GCP/BigQuery) that turn raw operational noise into high-fidelity data products.',
     details: ['BigQuery/GCP Specialization', 'Automated Pipelines', 'Data Modeling', 'Cloud Native Systems']
   },
   {
-    title: 'Agentic Intelligence',
+    title: 'Agentic Intelligence ',
     description: 'We drive the action. Implementing AI-powered systems and closed-loop analytics that leverage your semantic layer to generate measurable business value.',
     details: ['LLM Integration', 'Customer Intelligence', 'Predictive Modeling', 'Closed-Loop Feedback']
   }

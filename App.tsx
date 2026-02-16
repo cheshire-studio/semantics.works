@@ -8,6 +8,8 @@ import { Imprint } from './components/Imprint';
 import { Privacy } from './components/Privacy';
 import { WORKS, SERVICES } from './constants';
 import { Page } from './types';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
@@ -215,6 +217,8 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen transition-colors duration-700">
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Analytics />
+      <SpeedInsights />
       <main>
         {renderContent()}
       </main>
@@ -228,7 +232,6 @@ const App: React.FC = () => {
               <div className="space-y-10">
                 <span className="text-[9px] uppercase tracking-[0.5em] opacity-30 italic block">Initiate Contact</span>
                 <h2 className="text-[clamp(3rem,8vw,8rem)] font-light tracking-tighter italic leading-none hover:opacity-60 transition-opacity cursor-pointer uppercase">Make Data Make Sense.</h2>
-                <p className="text-xl font-light opacity-40 italic">welcome [at] semantics.works</p>
               </div>
 
               <div className="pt-12">

@@ -54,6 +54,10 @@ export const Privacy: React.FC = () => {
                         <p>
                             Vercel ist eine Plattform zum Hosting von Websites und zur Bereitstellung von Cloud-Diensten. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Details finden Sie in der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="underline opacity-60 hover:opacity-100 transition-opacity">vercel.com/legal/privacy</a>.
                         </p>
+                        <p>
+                            <strong>Vercel Web Analytics</strong><br />
+                            Zur Verbesserung der Benutzerfreundlichkeit und technischen Stabilität nutzen wir "Vercel Analytics". Dieser Dienst verarbeitet Daten anonym und setzt keine Cookies. Die Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO).
+                        </p>
                     </div>
 
                     <div className="space-y-4">
