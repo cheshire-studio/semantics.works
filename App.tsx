@@ -322,28 +322,30 @@ const App = () => {
                 <ContactForm />
               </div>
             </div>
-            <div className="space-y-8 text-right hidden md:block w-full md:w-1/2">
-              <div className="text-[9px] tracking-[0.4em] uppercase opacity-30">
+            <div className="space-y-8 text-left md:text-right w-full md:w-1/2">
+              <div className="text-[9px] tracking-[0.4em] uppercase opacity-30 hidden md:block">
                 Starting with the why.
               </div>
-              <div className="text-[9px] tracking-[0.4em] uppercase opacity-30">
+              <div className="text-[9px] tracking-[0.4em] uppercase opacity-30 hidden md:block">
                 Data Platform Strategy — Semantic Architecture <br /> Data Engineering — Consumer
                 Intelligence
               </div>
-              <div className="flex justify-end gap-8 text-[9px] tracking-[0.2em] uppercase opacity-40">
-                <button
-                  onClick={() => setCurrentPage(Page.Imprint)}
-                  className="hover:opacity-100 transition-opacity"
-                >
-                  Imprint
-                </button>
-                <button
-                  onClick={() => setCurrentPage(Page.Privacy)}
-                  className="hover:opacity-100 transition-opacity"
-                >
-                  Privacy
-                </button>
-              </div>
+              {currentPage === Page.About && (
+                <div className="flex justify-start md:justify-end gap-8 text-[9px] tracking-[0.2em] uppercase opacity-40">
+                  <button
+                    onClick={() => setCurrentPage(Page.Imprint)}
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    Imprint
+                  </button>
+                  <button
+                    onClick={() => setCurrentPage(Page.Privacy)}
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    Privacy
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </footer>
