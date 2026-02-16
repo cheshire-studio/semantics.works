@@ -159,22 +159,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="pt-20 grid grid-cols-2 md:grid-cols-3 gap-12">
-                <div>
-                  <h3 className="text-[10px] uppercase tracking-widest opacity-40 mb-6">Verticals</h3>
-                  <p className="text-sm font-light space-y-1">eCommerce<br />Retail<br />FinTech</p>
-                </div>
-                <div>
-                  <h3 className="text-[10px] uppercase tracking-widest opacity-40 mb-6">Network</h3>
-                  <a href="https://de.linkedin.com/in/klaus-werdenich" target="https://de.linkedin.com/in/klaus-werdenich" rel="noopener noreferrer" className="text-sm font-light border-b border-black/10 hover:border-black transition-colors pb-1 block w-fit">LinkedIn</a>
-                  <a href="mailto:welcome@semantics.works" className="text-sm font-light border-b border-black/10 hover:border-black transition-colors pb-1 block w-fit mt-3">Email</a>
-                </div>
-                <div className="hidden md:block">
-                  <h3 className="text-[10px] uppercase tracking-widest opacity-40 mb-6">Presence</h3>
-                  <p className="text-sm font-light italic">Located in CET<br />Remote Globally</p>
-                </div>
-              </div>
             </div>
           </section>
         );
@@ -244,7 +228,7 @@ const App: React.FC = () => {
               <div className="space-y-10">
                 <span className="text-[9px] uppercase tracking-[0.5em] opacity-30 italic block">Initiate Contact</span>
                 <h2 className="text-[clamp(3rem,8vw,8rem)] font-light tracking-tighter italic leading-none hover:opacity-60 transition-opacity cursor-pointer uppercase">Make Data Make Sense.</h2>
-                <p className="text-xl font-light opacity-40">welcome@semantics.works</p>
+                <p className="text-xl font-light opacity-40 italic">welcome [at] semantics.works</p>
               </div>
 
               <div className="pt-12">

@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export const Privacy: React.FC = () => {
+    useEffect(() => {
+        // Add noindex meta tag to prevent indexing of this page
+        const meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex, nofollow";
+        document.head.appendChild(meta);
+
+        return () => {
+            // Clean up when leaving the page
+            if (document.head.contains(meta)) {
+                document.head.removeChild(meta);
+            }
+        };
+    }, []);
+
     return (
         <section className="px-6 md:px-12 py-32 md:py-48 animate-in fade-in duration-1000 min-h-screen bg-neutral-50">
             <div className="max-w-3xl mx-auto space-y-16">
@@ -31,9 +46,13 @@ export const Privacy: React.FC = () => {
                     <div className="space-y-4">
                         <h2 className="text-lg font-normal uppercase tracking-widest">2. Hosting</h2>
                         <p>
-                            Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br />
-                            [Hoster Name, e.g., Vercel / Netlify / GitHub Pages]<br />
-                            [Address of Hoster]
+                            Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br /><br />
+                            <strong>Vercel Inc.</strong><br />
+                            440 N Barranca Ave #4133<br />
+                            Covina, CA 91723, USA
+                        </p>
+                        <p>
+                            Vercel ist eine Plattform zum Hosting von Websites und zur Bereitstellung von Cloud-Diensten. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Details finden Sie in der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="underline opacity-60 hover:opacity-100 transition-opacity">vercel.com/legal/privacy</a>.
                         </p>
                     </div>
 
@@ -43,15 +62,18 @@ export const Privacy: React.FC = () => {
                         <p>
                             Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
                         </p>
-                        <h3 className="uppercase tracking-widest text-xs opacity-60">Hinweis zur verantwortlichen Stelle</h3>
-                        <p>
-                            Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-                            Klaus Werdenich<br />
-                            SEMANTICS.WORKS<br />
-                            [Musterstraße 123]<br />
-                            [12345 Musterstadt]<br /><br />
-                            E-Mail: welcome@semantics.works
-                        </p>
+                        <div className="space-y-0 flex flex-col items-start pt-4">
+                            <img
+                                src="/assets/p_1.png"
+                                alt="Verantwortliche Stelle: Max Mustermann, SEMANTICS.WORKS, Musterstraße 12, 34567 Musterstadt"
+                                className="max-w-full w-auto mix-blend-multiply"
+                            />
+                            <img
+                                src="/assets/p_2.png"
+                                alt="Kontaktdaten: Telefon: 089 / 123 456 78, E-Mail: welcome AT semantics"
+                                className="max-w-full w-auto mix-blend-multiply"
+                            />
+                        </div>
                     </div>
 
                     <div className="space-y-4">
@@ -86,13 +108,6 @@ export const Privacy: React.FC = () => {
                             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
                         </p>
                     </div>
-
-                    <div className="pt-12 border-t border-black/10">
-                        <p className="italic opacity-60">
-                            Note: This is a standard template tailored for a "no-cookie" setup. Please review and replace the bracketed placeholder information.
-                        </p>
-                    </div>
-
                 </div>
             </div>
         </section>
