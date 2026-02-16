@@ -1,0 +1,14 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow legal/compliance pages from indexing
+Disallow: /*#privacy
+Disallow: /*#imprint
+
+# Sitemap
+Sitemap: https://semantics.works/sitemap.xml
+
+# Disallow admin/internal paths (if any in future)
+# Disallow: /admin/
+# Disallow: /api/

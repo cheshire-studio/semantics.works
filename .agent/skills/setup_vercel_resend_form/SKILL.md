@@ -8,18 +8,22 @@ description: Implements a serverless contact form using Resend on Vercel.
 Use this skill when the user needs a contact form backend on a Vercel-hosted project without a dedicated server.
 
 ## 1. Prerequisites
+
 - Project must be hosted on Vercel.
 - User must have a Resend account and API Key.
 
 ## 2. Install Dependencies
+
 ```bash
 npm install resend
 ```
 
 ## 3. Create Serverless Function
+
 Create `api/send.ts` (or `.js`) in the root (for Vercel) or `app/api/send/route.ts` (for Next.js App Router).
 
 ### Example (`api/send.ts` for Standard/Vite Projects on Vercel)
+
 ```ts
 import { Resend } from 'resend';
 
@@ -30,10 +34,10 @@ export default async function handler(request: Request) {
 
   try {
     const { name, email, message } = await request.json();
-    
+
     // Validate
     if (!name || !email || !message) {
-        return new Response('Missing fields', { status: 400 });
+      return new Response('Missing fields', { status: 400 });
     }
 
     const { data, error } = await resend.emails.send({
@@ -41,7 +45,7 @@ export default async function handler(request: Request) {
       to: ['YOUR_EMAIL@DOMAIN.COM'], // Replace this
       reply_to: email,
       subject: `New Inquiry from ${name}`,
-      html: `<p>${message}</p>`
+      html: `<p>${message}</p>`,
     });
 
     if (error) throw error;
@@ -54,6 +58,7 @@ export default async function handler(request: Request) {
 ```
 
 ## 4. Frontend Integration
+
 Verify the frontend `fetch` call points to `/api/send`.
 
 ```tsx
@@ -62,11 +67,12 @@ const handleSubmit = async (e) => {
   const response = await fetch('/api/send', {
     method: 'POST',
     body: JSON.stringify(formData),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   });
   // Handle success/error
 };
 ```
 
 ## 5. Environment Variables
+
 Remind the user to add `RESEND_API_KEY` to Vercel Environment Variables.

@@ -1,7 +1,5 @@
 {
   "name": "SEMANTICS.WORKS",
   "description": "Strategic data platforms for modern eCommerce and B2C enterprises.",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "requestFramePermissions": ["camera"]
 }

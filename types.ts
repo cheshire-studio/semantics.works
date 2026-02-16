@@ -1,4 +1,3 @@
-
 export interface Work {
   id: string;
   title: string;
@@ -20,5 +19,5 @@ export enum Page {
   Services = 'services',
   About = 'about',
   Imprint = 'imprint',
-  Privacy = 'privacy'
+  Privacy = 'privacy',
 }
