@@ -11,6 +11,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { StructuredData } from './components/StructuredData';
 import { organizationData } from './lib/structuredDataSchemas';
+import { Eli5Text } from './components/Eli5Text';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
@@ -26,22 +27,33 @@ const App = () => {
           <section className="px-6 md:px-12 py-32 md:py-48 animate-in fade-in duration-1000">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 max-w-[1600px] mx-auto">
               <div className="md:col-span-12 mb-32">
-                <h1 className="text-[clamp(3rem,10vw,10rem)] font-light tracking-tighter italic mb-12 uppercase">
-                  Works
-                </h1>
+                <Eli5Text
+                  as="h1"
+                  className="text-[clamp(3rem,10vw,10rem)] font-light tracking-tighter italic mb-12 uppercase"
+                  text="Works"
+                  eli5="Our Projects"
+                />
                 <div className="max-w-2xl mb-16">
-                  <p className="text-2xl md:text-3xl font-light opacity-80 leading-snug italic">
-                    "Data is the invisible thread that holds the luxury experience together. We
-                    weave complexity into clarity."
-                  </p>
+                  <Eli5Text
+                    as="p"
+                    className="text-2xl md:text-3xl font-light opacity-80 leading-snug italic"
+                    text='"Data is the invisible thread that holds the luxury experience together. We weave complexity into clarity."'
+                    eli5='"Think of data like the plumbing in a house. You don&#39;t see it, but it makes everything work perfectly. We make sure your business flows smoothly."'
+                  />
                 </div>
                 <div className="flex justify-between items-end border-b border-black/10 pb-8">
-                  <p className="text-[10px] tracking-[0.4em] uppercase opacity-40">
-                    Architectural Archive
-                  </p>
-                  <p className="text-[10px] tracking-[0.4em] uppercase opacity-40">
-                    Outcome-Driven Engineering
-                  </p>
+                  <Eli5Text
+                    as="p"
+                    className="text-[10px] tracking-[0.4em] uppercase opacity-40"
+                    text="Architectural Archive"
+                    eli5="Project Library"
+                  />
+                  <Eli5Text
+                    as="p"
+                    className="text-[10px] tracking-[0.4em] uppercase opacity-40"
+                    text="Outcome-Driven Engineering"
+                    eli5="We Build for Results"
+                  />
                 </div>
               </div>
               {WORKS.map((work, idx) => (
@@ -56,14 +68,18 @@ const App = () => {
           <section className="px-6 md:px-12 py-32 md:py-48 bg-white min-h-screen animate-in fade-in duration-1000">
             <div className="max-w-7xl mx-auto">
               <div className="mb-48 max-w-4xl">
-                <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-light tracking-tighter italic mb-12 uppercase">
-                  Solutions
-                </h1>
-                <p className="text-2xl md:text-3xl font-light opacity-80 leading-snug italic">
-                  Making data make sense. We bridge the gap between technical complexity and
-                  business logic by building the semantic architectures that power modern,
-                  agent-ready enterprises.
-                </p>
+                <Eli5Text
+                  as="h1"
+                  className="text-[clamp(3.5rem,12vw,9rem)] font-light tracking-tighter italic mb-12 uppercase"
+                  text="Solutions"
+                  eli5="What We Do"
+                />
+                <Eli5Text
+                  as="p"
+                  className="text-2xl md:text-3xl font-light opacity-80 leading-snug italic"
+                  text="Making data make sense. We bridge the gap between technical complexity and business logic by building the semantic architectures that power modern, agent-ready enterprises."
+                  eli5="We take all your messy numbers and lists and turn them into clear, easy-to-read dashboards so you can make smart decisions without a headache."
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12">
@@ -78,9 +94,14 @@ const App = () => {
                           0{idx + 1}
                         </span>
                       </div>
-                      <p className="text-base font-light opacity-60 leading-relaxed min-h-[100px]">
-                        {service.description}
-                      </p>
+                      <div className="min-h-[100px]">
+                        <Eli5Text
+                          as="p"
+                          className="text-base font-light opacity-60 leading-relaxed"
+                          text={service.description}
+                          eli5={service.eli5Description || service.description}
+                        />
+                      </div>
                       <ul className="space-y-4 pt-8">
                         {service.details.map((detail, i) => (
                           <li
@@ -88,7 +109,11 @@ const App = () => {
                             className="text-[10px] uppercase tracking-[0.2em] opacity-40 flex items-center gap-3 group/item"
                           >
                             <span className="w-1 h-1 bg-black/10 rounded-full group-hover/item:bg-black transition-colors"></span>
-                            {detail}
+                            <Eli5Text
+                              as="span"
+                              text={detail}
+                              eli5={service.eli5Details?.[i] || detail}
+                            />
                           </li>
                         ))}
                       </ul>
@@ -114,28 +139,37 @@ const App = () => {
                 </div>
                 <div className="md:w-[55%] space-y-20">
                   <div>
-                    <span className="text-[10px] uppercase tracking-[0.5em] opacity-40 block mb-8">
-                      Studio Profile
-                    </span>
+                    <Eli5Text
+                      as="span"
+                      className="text-[10px] uppercase tracking-[0.5em] opacity-40 block mb-8"
+                      text="Studio Profile"
+                      eli5="Who We Are"
+                    />
                     <h2 className="text-[clamp(2.5rem,8vw,8rem)] font-light tracking-tighter italic leading-none uppercase">
                       SEMANTICS
                       <br />
                       .WORKS
                     </h2>
-                    <p className="text-xl md:text-2xl mt-6 opacity-40 font-light tracking-tight italic">
-                      Make Data Make Sense
-                    </p>
+                    <Eli5Text
+                      as="p"
+                      className="text-xl md:text-2xl mt-6 opacity-40 font-light tracking-tight italic"
+                      text="Make Data Make Sense"
+                      eli5="We Fix Your Data"
+                    />
                   </div>
                   <div className="space-y-10 max-w-xl">
-                    <p className="text-xl font-light opacity-80 leading-relaxed italic">
-                      SEMANTICS.WORKS is a specialist consultancy focused on the architecture of
-                      data platforms for agile SMEs and high-growth B2C enterprises.
-                    </p>
-                    <p className="text-sm font-light opacity-50 leading-relaxed">
-                      By integrating modern engineering workflows with strategic customer modeling,
-                      we help companies transform technical friction into measurable competitive
-                      advantage.
-                    </p>
+                    <Eli5Text
+                      as="p"
+                      className="text-xl font-light opacity-80 leading-relaxed italic"
+                      text="SEMANTICS.WORKS is a specialist consultancy focused on the architecture of data platforms for agile SMEs and high-growth B2C enterprises."
+                      eli5="We are a team of experts who help you organize your information so you can grow even faster."
+                    />
+                    <Eli5Text
+                      as="p"
+                      className="text-sm font-light opacity-50 leading-relaxed"
+                      text="By integrating modern engineering workflows with strategic customer modeling, we help companies transform technical friction into measurable competitive advantage."
+                      eli5="We use the latest tech to solve your tech problems, so you can focus on selling your products and making customers happy."
+                    />
                   </div>
                 </div>
               </div>
@@ -143,37 +177,54 @@ const App = () => {
               {/* Philosophy Section */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-24 py-32 border-y border-black/5">
                 <div className="space-y-8">
-                  <span className="text-[10px] uppercase tracking-[0.5em] opacity-30 italic block">
-                    — Our Philosophy
-                  </span>
-                  <h3 className="text-4xl md:text-6xl font-light italic leading-none uppercase">
-                    Outcome {'>'} Output
-                  </h3>
+                  <Eli5Text
+                    as="span"
+                    className="text-[10px] uppercase tracking-[0.5em] opacity-30 italic block"
+                    text="— Our Philosophy"
+                    eli5="— How We Think"
+                  />
+                  <Eli5Text
+                    as="h3"
+                    className="text-4xl md:text-6xl font-light italic leading-none uppercase"
+                    text="Outcome > Output"
+                    eli5="Results Matter Most"
+                  />
                 </div>
                 <div className="max-w-xl space-y-12">
-                  <p className="text-2xl font-light leading-snug opacity-80">
-                    We prioritize business impact over technical vanity. Every architectural
-                    decision is measured by the value it creates and the operational pain it
-                    resolves.
-                  </p>
+                  <Eli5Text
+                    as="p"
+                    className="text-2xl font-light leading-snug opacity-80"
+                    text="We prioritize business impact over technical vanity. Every architectural decision is measured by the value it creates and the operational pain it resolves."
+                    eli5="We don't just write code for fun. We build things that actually help you make more money and save you time. No fancy tech just for show."
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
                     <div>
-                      <h4 className="text-[9px] uppercase tracking-[0.3em] font-medium mb-4">
-                        Focus
-                      </h4>
-                      <p className="text-sm font-light opacity-50">
-                        Our goal is to create foundations that empower your internal teams to scale
-                        without friction.
-                      </p>
+                      <Eli5Text
+                        as="h4"
+                        className="text-[9px] uppercase tracking-[0.3em] font-medium mb-4"
+                        text="Focus"
+                        eli5="The Goal"
+                      />
+                      <Eli5Text
+                        as="p"
+                        className="text-sm font-light opacity-50"
+                        text="Our goal is to create foundations that empower your internal teams to scale without friction."
+                        eli5="We build a strong base for your data so your team can work fast without getting stuck on technical problems."
+                      />
                     </div>
                     <div>
-                      <h4 className="text-[9px] uppercase tracking-[0.3em] font-medium mb-4">
-                        Value
-                      </h4>
-                      <p className="text-sm font-light opacity-50">
-                        Solving real pain-points in customer analytics, insights, and reporting is
-                        our primary metric for success.
-                      </p>
+                      <Eli5Text
+                        as="h4"
+                        className="text-[9px] uppercase tracking-[0.3em] font-medium mb-4"
+                        text="Value"
+                        eli5="The Win"
+                      />
+                      <Eli5Text
+                        as="p"
+                        className="text-sm font-light opacity-50"
+                        text="Solving real pain-points in customer analytics, insights, and reporting is our primary metric for success."
+                        eli5="If we make your life easier and your decisions better, then we've done our job. It's about fixing your headaches."
+                      />
                     </div>
                   </div>
                 </div>
@@ -183,50 +234,80 @@ const App = () => {
               <div className="py-32 space-y-24">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12">
                   <div className="md:w-1/2">
-                    <span className="text-[10px] uppercase tracking-[0.5em] opacity-30 italic block mb-8">
-                      — The Core Thesis
-                    </span>
+                    <Eli5Text
+                      as="span"
+                      className="text-[10px] uppercase tracking-[0.5em] opacity-30 italic block mb-8"
+                      text="— The Core Thesis"
+                      eli5="— The Big Idea"
+                    />
                     <h3 className="text-4xl md:text-7xl font-light italic leading-tight uppercase">
-                      Without semantics, <br />
-                      data is just noise.
+                      <Eli5Text
+                        as="span"
+                        text="Without semantics,"
+                        eli5="Data without meaning"
+                      />
+                      <br />
+                      <Eli5Text
+                        as="span"
+                        text="data is just noise."
+                        eli5="is just a pile of legos."
+                      />
                     </h3>
                   </div>
                   <div className="md:w-1/2 max-w-xl">
-                    <p className="text-xl font-light opacity-60 leading-relaxed italic">
-                      In the era of Generative AI, the "Semantic Gap" is the biggest bottleneck. If
-                      your LLMs don't understand your business logic, they will hallucinate. We
-                      build the definition layer that ensures your data "makes sense" to both your
-                      team and your agents.
-                    </p>
+                    <Eli5Text
+                      as="p"
+                      className="text-xl font-light opacity-60 leading-relaxed italic"
+                      text='In the era of Generative AI, the "Semantic Gap" is the biggest bottleneck. If your LLMs don&#39;t understand your business logic, they will hallucinate. We build the definition layer that ensures your data "makes sense" to both your team and your agents.'
+                      eli5="AI is like a super-smart intern, but if you give it bad instructions (bad data), it makes mistakes. We give it the right dictionary so it understands your business perfectly."
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-16 border-t border-black/5">
                   <div className="space-y-6">
-                    <h4 className="text-[10px] uppercase tracking-widest font-medium opacity-40">
-                      Knowledge Hub
-                    </h4>
+                    <Eli5Text
+                      as="h4"
+                      className="text-[10px] uppercase tracking-widest font-medium opacity-40"
+                      text="Knowledge Hub"
+                      eli5="One Truth"
+                    />
                     <p className="text-sm font-light opacity-60 leading-relaxed">
-                      Centralized definitions for metrics, entities, and relationships. No more
-                      "definitions in spreadsheets".
+                      <Eli5Text
+                        as="span"
+                        text='Centralized definitions for metrics, entities, and relationships. No more "definitions in spreadsheets".'
+                        eli5="We keep all your definitions in one place, so everyone agrees on what the numbers assume. No more arguing over Excel sheets."
+                      />
                     </p>
                   </div>
                   <div className="space-y-6">
-                    <h4 className="text-[10px] uppercase tracking-widest font-medium opacity-40">
-                      AI Readiness
-                    </h4>
+                    <Eli5Text
+                      as="h4"
+                      className="text-[10px] uppercase tracking-widest font-medium opacity-40"
+                      text="AI Readiness"
+                      eli5="Future Proof"
+                    />
                     <p className="text-sm font-light opacity-60 leading-relaxed">
-                      Agentic workflows require high-fidelity data context. We architect the schemas
-                      that LLMs can actually reason with.
+                      <Eli5Text
+                        as="span"
+                        text="Agentic workflows require high-fidelity data context. We architect the schemas that LLMs can actually reason with."
+                        eli5="AI needs clear instructions to work well. We build the maps that let the robots understand exactly where to go."
+                      />
                     </p>
                   </div>
                   <div className="space-y-6">
-                    <h4 className="text-[10px] uppercase tracking-widest font-medium opacity-40">
-                      Human Clarity
-                    </h4>
+                    <Eli5Text
+                      as="h4"
+                      className="text-[10px] uppercase tracking-widest font-medium opacity-40"
+                      text="Human Clarity"
+                      eli5="Easy Access"
+                    />
                     <p className="text-sm font-light opacity-60 leading-relaxed">
-                      Removing the engineering bottleneck. Business users get direct access to
-                      self-serve data they can trust.
+                      <Eli5Text
+                        as="span"
+                        text="Removing the engineering bottleneck. Business users get direct access to self-serve data they can trust."
+                        eli5="No more waiting for engineers to answer your questions. We make it easy for you to get the answers you need, yourself."
+                      />
                     </p>
                   </div>
                 </div>
@@ -253,9 +334,12 @@ const App = () => {
             </div>
             <div className="relative z-10 text-center space-y-16 px-6">
               <div className="space-y-4 flex flex-col items-center">
-                <span className="text-[10px] md:text-xs tracking-[0.6em] font-light opacity-50 animate-pulse uppercase">
-                  Make Data Make Sense
-                </span>
+                <Eli5Text
+                  as="span"
+                  className="text-[10px] md:text-xs tracking-[0.6em] font-light opacity-50 animate-pulse uppercase"
+                  text="Make Data Make Sense"
+                  eli5="We Fix Your Data"
+                />
                 <h1 className="text-[clamp(3.5rem,14vw,11rem)] font-light tracking-tighter italic leading-none text-left w-fit">
                   SEMANTICS
                   <br />
@@ -263,11 +347,12 @@ const App = () => {
                 </h1>
               </div>
               <div className="max-w-2xl mx-auto space-y-12">
-                <p className="text-base md:text-lg font-light opacity-60 tracking-tight leading-relaxed italic">
-                  Strategic data platforms for agile SMEs and high-growth eCommerce.{' '}
-                  <br className="hidden md:block" />
-                  We transform raw operational complexity into predictive competitive advantage.
-                </p>
+                <Eli5Text
+                  as="p"
+                  className="text-base md:text-lg font-light opacity-60 tracking-tight leading-relaxed italic"
+                  text="Strategic data platforms for agile SMEs and high-growth eCommerce. We transform raw operational complexity into predictive competitive advantage."
+                  eli5="We build the systems that help you turn your messy data into a secret weapon for beating your competition."
+                />
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                   <button
                     onClick={() => setCurrentPage(Page.Work)}
@@ -310,12 +395,18 @@ const App = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16 max-w-[1400px] mx-auto">
             <div className="space-y-12 w-full md:w-1/2">
               <div className="space-y-10">
-                <span className="text-[9px] uppercase tracking-[0.5em] opacity-30 italic block">
-                  Initiate Contact
-                </span>
-                <h2 className="text-[clamp(3rem,8vw,8rem)] font-light tracking-tighter italic leading-none hover:opacity-60 transition-opacity cursor-pointer uppercase">
-                  Make Data Make Sense.
-                </h2>
+                <Eli5Text
+                  as="span"
+                  className="text-[9px] uppercase tracking-[0.5em] opacity-30 italic block"
+                  text="Initiate Contact"
+                  eli5="Say Hello"
+                />
+                <Eli5Text
+                  as="h2"
+                  className="text-[clamp(3rem,8vw,8rem)] font-light tracking-tighter italic leading-none hover:opacity-60 transition-opacity cursor-pointer uppercase"
+                  text="Make Data Make Sense."
+                  eli5="Let's solve your data challenges."
+                />
               </div>
 
               <div className="pt-12">
@@ -324,11 +415,20 @@ const App = () => {
             </div>
             <div className="space-y-8 text-left md:text-right w-full md:w-1/2">
               <div className="text-[9px] tracking-[0.4em] uppercase opacity-30 hidden md:block">
-                Starting with the why.
+                <Eli5Text
+                  as="span"
+                  text="Starting with the why."
+                  eli5="We align on strategy first."
+                  placement="right"
+                />
               </div>
               <div className="text-[9px] tracking-[0.4em] uppercase opacity-30 hidden md:block">
-                Data Platform Strategy — Semantic Architecture <br /> Data Engineering — Consumer
-                Intelligence
+                <Eli5Text
+                  as="span"
+                  text="Data Platform Strategy — Semantic Architecture Data Engineering — Consumer Intelligence"
+                  eli5="Strategy, Engineering, Intelligence — end-to-end execution."
+                  placement="right"
+                />
               </div>
               {currentPage === Page.About && (
                 <div className="flex justify-start md:justify-end gap-8 text-[9px] tracking-[0.2em] uppercase opacity-40">

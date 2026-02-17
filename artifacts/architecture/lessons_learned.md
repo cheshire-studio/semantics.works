@@ -130,3 +130,17 @@ See `artifacts/plans/content_improvements.md` for full details:
 - Code Splitting: 5 chunks
 - Image Loading: Lazy (viewport-based)
 - SEO Score: 90/100 (expected)
+
+## UI/UX Visibility & Contrast (2026-02-17)
+
+### Toggle State Visibility
+
+- **Problem**: The "Off" state for the ELI5 toggle was a black rectangle. On the dark-mode Home page, this black rectangle became invisible against the black background, making it impossible for the user to find the toggle to turn it back on ("content disappeared").
+- **Solution**: Used `border-current` instead of a fixed color. This ensures the UI element inherits the active text color (White on Dark pages, Black on Light pages), guaranteeing visibility in all themes.
+- **Key Takeaway**: Always test UI elements in *all* theme contexts (Dark/Light). Avoid hardcoded colors for interactive control states; use `currentColor` (via `border-current`, `text-current`) to ensure they adapt to the background automatically.
+
+### Dangerous Refactors (State to Ref) (2026-02-17)
+
+- **Problem**: In an attempt to "clean up" unused state variables (`quickExitCount`), I switched to `useRef` but forgot to initialize the ref variable inside the component body. This result in a `ReferenceError` crash when the user clicked the toggle.
+- **Solution**: Restored the missing `const quickExitCount = useRef(0)` declaration.
+- **Key Takeaway**: Refactoring state to refs is a common optimization, but it changes variable scope. Always verify that the variable is actually declared before using it. "Simple" cleanups are the most likely source of regressions because they often skip rigorous testing. Always click the buttons you just refactored.

@@ -1,4 +1,5 @@
 import { Work } from '../types';
+import { Eli5Text } from './Eli5Text';
 
 interface WorkCardProps {
   work: Work;
@@ -28,7 +29,12 @@ export const WorkCard = ({ work, index }: WorkCardProps) => {
           </span>
           <h3 className="text-xl md:text-2xl font-light tracking-tight italic">{work.title}</h3>
         </div>
-        <p className="max-w-xs text-sm font-light opacity-70 leading-relaxed">{work.description}</p>
+        <Eli5Text
+          as="p"
+          className="max-w-xs text-sm font-light opacity-70 leading-relaxed"
+          text={work.description}
+          eli5={work.eli5Description || work.description}
+        />
       </div>
       <div className="mt-4 flex gap-2">
         {work.tags.map((tag) => (
