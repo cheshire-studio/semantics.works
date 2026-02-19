@@ -115,12 +115,7 @@ export const SERVICES: Service[] = [
       'Knowledge Graph Basics',
       'AI-Ready Data Contracts',
     ],
-    eli5Details: [
-      'Business Dictionary',
-      'Defining Success',
-      'Connecting the Dots',
-      'Ready for AI',
-    ],
+    eli5Details: ['Business Dictionary', 'Defining Success', 'Connecting the Dots', 'Ready for AI'],
   },
   {
     title: 'Data Engineering     ',
@@ -134,12 +129,7 @@ export const SERVICES: Service[] = [
       'Data Modeling',
       'Cloud Native Systems',
     ],
-    eli5Details: [
-      'Modern Tools',
-      'Automatic Pipes',
-      'Organizing Data',
-      'Cloud Power',
-    ],
+    eli5Details: ['Modern Tools', 'Automatic Pipes', 'Organizing Data', 'Cloud Power'],
   },
   {
     title: 'Agentic Intelligence ',
@@ -153,11 +143,6 @@ export const SERVICES: Service[] = [
       'Predictive Modeling',
       'Closed-Loop Feedback',
     ],
-    eli5Details: [
-      'Connecting AI',
-      'Knowing Customers',
-      'Predicting Future',
-      'Learning Faster',
-    ],
+    eli5Details: ['Connecting AI', 'Knowing Customers', 'Predicting Future', 'Learning Faster'],
   },
 ];

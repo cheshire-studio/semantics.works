@@ -37,16 +37,20 @@ export const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => 
         <button
           onClick={toggleEli5}
           className="w-4 h-4 relative group focus:outline-none block"
-          aria-label={isEnabled ? "Disable Semantics" : "Enable Semantics"}
-          title={isEnabled ? "Disable Semantics" : "Enable Semantics"}
+          aria-label={isEnabled ? 'Disable Semantics' : 'Enable Semantics'}
+          title={isEnabled ? 'Disable Semantics' : 'Enable Semantics'}
         >
           {/* ON State: Favicon */}
-          <div className={`w-full h-full transition-all duration-300 ${isEnabled ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+          <div
+            className={`w-full h-full transition-all duration-300 ${isEnabled ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
+          >
             <img src="/assets/favicon.png" alt="Toggle" className="w-full h-full object-contain" />
           </div>
 
           {/* OFF State: Black Square (Solid) */}
-          <div className={`absolute inset-0 bg-black border border-white/20 rounded-[1px] transition-all duration-300 ${isEnabled ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`}></div>
+          <div
+            className={`absolute inset-0 bg-black border border-white/20 rounded-[1px] transition-all duration-300 ${isEnabled ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`}
+          ></div>
         </button>
 
         {/* Re-enable Prompt: Clean Gray Text + Curved Arrow */}
@@ -55,8 +59,21 @@ export const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => 
           onClick={() => toggleEli5()}
         >
           {/* Curved Arrow (SVG) */}
-          <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400 rotate-6 transform -mt-2 opacity-60">
-            <path d="M28 8C18 8 12 12 2 12M2 12L6 9M2 12L6 15" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          <svg
+            width="30"
+            height="20"
+            viewBox="0 0 30 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-neutral-400 rotate-6 transform -mt-2 opacity-60"
+          >
+            <path
+              d="M28 8C18 8 12 12 2 12M2 12L6 9M2 12L6 15"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
 
           {/* Text */}
@@ -71,8 +88,9 @@ export const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => 
           <button
             key={item.value}
             onClick={() => setCurrentPage(item.value)}
-            className={`transition-all uppercase relative group py-2 whitespace-nowrap ${currentPage === item.value ? 'opacity-100' : 'opacity-40 hover:opacity-100'
-              }`}
+            className={`transition-all uppercase relative group py-2 whitespace-nowrap ${
+              currentPage === item.value ? 'opacity-100' : 'opacity-40 hover:opacity-100'
+            }`}
             aria-label={`Navigate to ${item.name}`}
             aria-current={currentPage === item.value ? 'page' : undefined}
           >

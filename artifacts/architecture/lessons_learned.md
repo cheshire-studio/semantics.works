@@ -137,10 +137,20 @@ See `artifacts/plans/content_improvements.md` for full details:
 
 - **Problem**: The "Off" state for the ELI5 toggle was a black rectangle. On the dark-mode Home page, this black rectangle became invisible against the black background, making it impossible for the user to find the toggle to turn it back on ("content disappeared").
 - **Solution**: Used `border-current` instead of a fixed color. This ensures the UI element inherits the active text color (White on Dark pages, Black on Light pages), guaranteeing visibility in all themes.
-- **Key Takeaway**: Always test UI elements in *all* theme contexts (Dark/Light). Avoid hardcoded colors for interactive control states; use `currentColor` (via `border-current`, `text-current`) to ensure they adapt to the background automatically.
+- **Key Takeaway**: Always test UI elements in _all_ theme contexts (Dark/Light). Avoid hardcoded colors for interactive control states; use `currentColor` (via `border-current`, `text-current`) to ensure they adapt to the background automatically.
 
 ### Dangerous Refactors (State to Ref) (2026-02-17)
 
 - **Problem**: In an attempt to "clean up" unused state variables (`quickExitCount`), I switched to `useRef` but forgot to initialize the ref variable inside the component body. This result in a `ReferenceError` crash when the user clicked the toggle.
 - **Solution**: Restored the missing `const quickExitCount = useRef(0)` declaration.
 - **Key Takeaway**: Refactoring state to refs is a common optimization, but it changes variable scope. Always verify that the variable is actually declared before using it. "Simple" cleanups are the most likely source of regressions because they often skip rigorous testing. Always click the buttons you just refactored.
+
+### SPA Analytics & LCP Optimization (2026-02-19)
+
+- **Problem**: Vercel Analytics showed no page paths because internal navigation didn't update the URL.
+- **Solution**: Implemented `window.history.pushState` on navigation changes. This creates virtual page views that analytics tools can track.
+- **Key Takeaway**: For SPAs without a router library, manually syncing state to URL is critical for SEO, deep linking, and analytics.
+
+- **Problem**: Lower LCP score due to hero image loading late.
+- **Solution**: Added [`fetchpriority="high"`](https://web.dev/fetch-priority/) to the `<img>` tag and a `<link rel="preload">` in the head.
+- **Key Takeaway**: Explicitly signaling priority for above-the-fold images is the highest-ROI performance optimization for visual-heavy landing pages.

@@ -14,10 +14,52 @@ import { organizationData } from './lib/structuredDataSchemas';
 import { Eli5Text } from './components/Eli5Text';
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
+  // Initialize state from URL query param if present, or default to Home
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const view = params.get('view');
+      if (view && Object.values(Page).includes(view as Page)) {
+        return view as Page;
+      }
+    }
+    return Page.Home;
+  });
 
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const view = params.get('view');
+      if (view && Object.values(Page).includes(view as Page)) {
+        setCurrentPage(view as Page);
+      } else {
+        setCurrentPage(Page.Home);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Sync state to URL without reloading
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update URL to match current page state
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (currentPage === Page.Home) {
+        url.search = '';
+      } else {
+        url.searchParams.set('view', currentPage);
+      }
+
+      // Only push if the URL actually changed to avoid duplicate history entries
+      if (window.location.href !== url.href) {
+        window.history.pushState({}, '', url);
+      }
+    }
   }, [currentPage]);
 
   const renderContent = () => {
@@ -241,11 +283,7 @@ const App = () => {
                       eli5="— The Big Idea"
                     />
                     <h3 className="text-4xl md:text-7xl font-light italic leading-tight uppercase">
-                      <Eli5Text
-                        as="span"
-                        text="Without semantics,"
-                        eli5="Data without meaning"
-                      />
+                      <Eli5Text as="span" text="Without semantics," eli5="Data without meaning" />
                       <br />
                       <Eli5Text
                         as="span"
@@ -330,6 +368,7 @@ const App = () => {
                 src="/assets/hero.png"
                 alt="Architecture Background"
                 className="w-full h-full object-cover scale-105"
+                fetchPriority="high"
               />
             </div>
             <div className="relative z-10 text-center space-y-16 px-6">
